@@ -1,0 +1,54 @@
+<div class="container">
+    <h4>Поиск объектов</h4>
+    <ul class="filter">
+        <li class="apartment_price">
+            <p>Стоимость квартиры от (сом)</p>
+            <input type="text" placeholder="От">
+        </li>
+        <li class="before_price">
+            <p>До</p>
+            <input type="text" placeholder="До">
+        </li>
+        <li class="number_of_rooms">
+            <p>Кол-во комнат</p>
+            <select>
+                <option>3</option>
+                <option>2</option>
+                <option>1</option>
+            </select>
+        </li>
+        <li class="status">
+            <p>Выберите статус</p>
+            <select id="status_select">
+                <option>Готовые объекты</option>
+                <option>Строящиеся объекты</option>
+            </select>
+        </li>
+        <li class="result"><input type="submit" value="Показать результаты" onclick="mySearch()"></li>
+    </ul>
+</div>
+<div class="container" style="visibility: hidden; height:0" id="result">
+    <h4>Результат поиска</h4>
+     <div class="row object_collumn" style="visibility: hidden; height:0" id="progress">
+        {% for object in progress_objects %}
+            <div class="col-xl-3 col-lg-3 col-md-6">
+                <a href="{{ object.get_absolute_url }}">
+                    <img src="{{ object.mini_image.url }}">
+                    <h6>{{ object.object_name }}</h6>
+                    <p>{{ object.title }}</p>
+                </a>
+            </div>
+        {% endfor %}
+    </div>
+    <div class="row object_collumn" style="visibility: hidden; height:0" id="ready">
+        {% for object in ready_objects %}
+            <div class="col-xl-3 col-lg-3 col-md-6">
+                <a href="{{ object.get_absolute_url }}">
+                    <img src="{{ object.mini_image.url }}">
+                    <h6>{{ object.object_name }}</h6>
+                    <p>{{ object.title }}</p>
+                </a>
+            </div>
+        {% endfor %}
+    </div>
+</div>

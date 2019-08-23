@@ -1,0 +1,94 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block style %}
+<style>
+    #home {
+        background: url({{ banner.image.url }}) fixed;
+        background-blend-mode: multiply;
+        background-color: #00000042;
+        background-size: cover;
+        height: 100vh;
+        background-attachment: fixed;
+    }
+
+    .header_fixed {
+        position: fixed;
+        max-width: 100% !important;
+        padding: 0 55px !important;
+        background: url({{ banner.image.url }});
+        background-blend-mode: multiply;
+        background-color: #00000042;
+        background-size: cover;
+        background-attachment: fixed;
+        z-index: 2;
+        top: 0;
+        animation: showElement;
+        animation-duration: 1s;
+    }
+</style>
+{% endblock %}
+{% block content %}
+<header id="home">
+    {% include 'header_kg.html' with phones=phones main_phone=main_phone title=image_title.title_kg %}
+</header>
+<section id="objects">
+    {% include 'search_kg.html' %}
+</section>
+<section id="objects">
+    {% include 'ready_objects_kg.html' %}
+</section>
+<section id="objects_in_progress">
+    {% include 'objects_in_progress_kg.html' %}
+</section>
+<section id="installment_plan">
+    {% include 'calculator_kg.html' %}
+</section>
+<section id="video">
+    {% include 'about_kg.html' %}
+</section>
+<section id="news">
+    {% include 'news_kg.html' %}
+</section>
+<section id="callback">
+    {% include 'callback_kg.html' %}
+</section>
+<iframe src="http://karta.kg-group.kg/main/kg-group.kg/ru/index.html"
+    onload="this.width=screen.width;this.height=screen.height;" frameborder="0" width="1360" height="768">Browser not
+    compatible.</iframe>
+<section id="contacts">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-xl-4 col-lg-4 contact_collumn">
+                <br><br><br><br>
+                <h4>Биз менен байланышуу</h4>
+            </div>
+            <div class="col-xl-4 col-lg-4 contact_collumn">
+                <h5 class="map_icon">Бишкек шаары </h5>
+                <div class="contact_info">
+                    <p>Байтик Баатыр көчөсү 37, Кыргыз Республикасы, 720000</p>
+                    <p>0(312) 44 22 22;<br>
+                        0(771) 44 22 22<br>
+                        0(705) 44 22 22;<br>
+                        0(772) 44 22 22<br></p>
+                    <p class="email">info@kg-group.kg</p>
+                </div>
+            </div>
+            <div class="col-xl-4 col-lg-4 contact_collumn">
+                <h5 class="map_icon">Ош шаары</h5>
+                <div class="contact_info">
+                    <p>И.Раззаков көчөсү 21/1(Ош району)</p>
+                    <p>0(709) 44 22 22;<br>
+                        0(779) 44 22 22<br></p>
+                    <p class="email">info@kg-group.kg</p>
+                </div>
+            </div>
+        
+        </div>
+    </div>
+  
+</section>
+<footer>
+    {% include 'footer_kg.html' %}
+</footer>
+{% endblock %}

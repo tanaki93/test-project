@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block style %}
+<style>
+    #home {
+        background: url({{ banner.image.url }}) fixed;
+        background-blend-mode: multiply;
+        background-color: #00000042;
+        background-size: cover;
+        height: 100vh;
+        background-attachment: fixed;
+    }
+    .header_fixed{
+    position: fixed;
+    max-width: 100%!important;
+    padding: 0 55px!important;
+    background: url({{ banner.image.url }});  
+        background-blend-mode: multiply;
+    background-color: #00000042;
+    background-size:cover; 
+    background-attachment: fixed;
+    z-index: 2;
+    top:0;
+    animation: showElement;
+    animation-duration: 1s;
+}
+</style>
+{% endblock %}
+{% block content %}
+<header id="home">
+    {% include 'header.html' with phones=phones main_phone=main_phone title=image_title.title %}
+</header>
+<br><br><br><br>
+<div id="map"></div>
+<footer>
+    {% include 'footer.html' %}
+</footer>
+{% endblock %}

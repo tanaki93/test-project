@@ -1,0 +1,18 @@
+<div class="container">
+    <h4>Новости компании</h4>
+</div>
+<div class="container">
+    <div class="sl">
+        {% for news_obj in news %}
+            <div class="sl_slide_1">
+                <a href="{{ news_obj.get_absolute_url }}">
+                    <img src="{{ news_obj.logo.url }}">
+                    <div class="desc_new">
+                    <p>{{ news_obj.title }}</p>
+                    <p class="date_new">{{ news_obj.created_date }}</p>
+                </div>
+                </a>
+            </div>
+        {% endfor %}
+    </div>
+</div>

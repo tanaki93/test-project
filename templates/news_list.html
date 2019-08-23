@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block style %}
+    <style>
+        .floor_close {
+            display: none !important;
+        }
+    </style>
+{% endblock %}
+{% block content %}
+    <header id="home">
+        {% include 'header_s.html' with phones=phones main_phone=main_phone %}
+    </header>
+    <section id="news_object">
+        <div class="container">
+            <h4>Новости и акции</h4>
+        </div>
+        <div class="container">
+            <div class="row">
+               
+                    <div class="col-xl-9 blago">
+                            {% for object in object_list %}
+                        <h5>{{ object.title }}</h5>
+                        <img src="{{ object.logo.url }}" width="100%">
+                             {{ object.contents|safe|truncatewords:50 }}
+                        <br>
+                        <p class="date_new">{{ object.created_date }}</p>
+                        <br>
+                        <p class="news_button"> <a href="{{ object.get_absolute_url }}">Подробнее</a></p>
+                        <br><br>
+                        {% endfor %}
+                    </div>
+               
+                <div class="col-xl-3">
+                    <div class="new_post">
+                        <h5><b>Свежие записи</b></h5>
+                        {% for item in last_4_news %}
+                            <p><a href="{{ item.get_absolute_url }}">{{ item.title }}</a></p>
+                        {% endfor %}
+                        <p><a href="{% url 'news_list' %}">Все новости</a></p>
+                    </div>
+                    <div class="arhiv">
+                        <h5><b>Архивы</b></h5>
+                        <ul>
+                            {% for item in news_archive %}
+                                <li><a href="{{ item.get_absolute_url }}">{{ item.title }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        {% include 'footer.html' %}
+    </footer>
+{% endblock %}

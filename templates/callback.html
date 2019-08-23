@@ -1,0 +1,18 @@
+<div class="container">
+    <h4>Заказать обратный звонок</h4>
+    <p>Вы можете оставить заявку на получение консультации от менеджера-продаж, используя данную форму. </p>
+</div>
+<div class="container">
+    <div class="row">
+        <form action="{% url 'send_email' %}" method="post" class="phone_form">
+            {% csrf_token %}
+            <ul class="callback_spisok">
+                <li><input type="text" name="user_object" placeholder="Покупка квартиры"></li>
+                <li><input type="text" name="user_name" placeholder="Как вас зовут?"></li>
+                <li><input type="tel" name="user_phone" required placeholder="Как вам перезвонить?" id="user_phone"
+                        class="user-phone" title="Формат: +996 (999) 99-99-99" />
+            </ul>
+            <input type="submit" name="submit" value="Отправить запрос">
+        </form>
+    </div>
+</div>

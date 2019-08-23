@@ -1,0 +1,21 @@
+<div class="container">
+    <h4>Курулуп жаткан имараттар</h4>
+</div>
+<!-- Заголовок -->
+<div class="container ">
+    <div class="row object_in_progress_collumn">
+       
+            {% for object in progress_objects_kg %}
+            <div class="col-xl-4 col-lg-4 col-md-6">
+                <a href="{{ object.get_absolute_kg_url }}">
+                    <img src="{{ object.mini_image.url }}"> <!-- Картинка объектов  -->
+                    <div class="desc">
+                        <h6>{{ object.object_name_kg }}</h6> <!-- Заголовок объектов -->
+                        <p>{{ object.title_kg }}</p> <!-- Описание объектов -->
+                    </div>
+                </a>
+            </div>
+            {% endfor %}
+        
+    </div>
+</div>

@@ -1,0 +1,64 @@
+{% load static %}
+<span class="border_style">
+    <nav class=" navbar-expand-lg">
+        <div id="menu" class="container border_height_style ">
+            <div class="row">
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                            data-target="#menu1" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                <div class="col-xl-2 col-lg-2 col-md-2 logo">
+                    <a href="{% url 'home_page' %}"> <img src="{% static 'img/logo.svg' %}"> </a>
+                </div>
+                <div class="col-xl-8 col-lg-8 col-md-8 menu collapse  navbar-collapse " id="menu1">
+                    <ul class="menu">
+                        <li class="nav-item"><a href="{% url 'home_page_kg' %}">Башкы бет</a></li>
+                        <li class="nav-item"><a href="{% url 'home_page_kg' %}#video">Компания</a></li>
+                        <li class="nav-item"><a href="{% url 'home_page_kg' %}#objects">Объекттер</a></li>
+                        <li class="nav-item"><a href="{% url 'home_page_kg' %}#news">Жанылыктар жана акциялар</a></li>
+                        <li class="nav-item"><a href="{% url 'home_page_kg' %}#contacts">Байланыш</a></li>
+                        <li class="nav-item"><a href="{% url 'charity_list_kg' %}">Кайрымдуулук</a></li>
+                        <li class="nav-item"><a href="{% url 'home_page' %}">RU</a></li>
+                        <!-- TODO: add link -->
+                    </ul>
+                </div>
+                <div class="col-xl-2 col-lg-2 col-md-5  number text-right ">
+                    <ul>
+                        <li class="icon_number"></li>
+                        <li>
+                            <div class="dropdown">
+                            <button class="dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                                    aria-haspopup="true" aria-expanded="false"> {{ main_phone.number }}
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                {% for phone in phones %}
+                               <a href="tel:{{ phone.number }}"> <p>{{ phone.number }}</p> </a>
+                                {% endfor %}
+                            </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+</span>
+<div class="container text_banner">
+    <div class="row">
+        <div class="col-xl-12 ">
+            <h1 class="slogan_kg">Келечек бүгүн курулууда!</h1>
+        </div>
+        <div class="col-xl-12 ">
+            <h1 class="slogan_ru">Будущее строится сегодня!</h1>
+        </div>
+        <div class="col-xl-12 link_baner">
+            <ul>
+                <li class="button_rassrochka"><a href="#installment_plan">Батирди бөлүп төлөө</a></li>
+                <li class="button_flat"><a href="#objects">Квартира тандоо</a></li>
+            </ul>
+        </div>
+        <div class="col-xl-12 text-right example_bottom">
+            <p>{{ title }}</p>
+        </div>
+    </div>
+</div>

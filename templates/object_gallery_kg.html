@@ -1,0 +1,12 @@
+<div class="container">
+    <h4>Объектин галереясы</h4>
+</div>
+<div class="container gallery_object">
+    <div class="sl_2">
+        {% for item in gallery %}
+        <div class="sl_slide">
+            <a href="{{ item.media.url }}" class="html5lightbox" data-group="set2"><img src="{{ item.media.url }}" width="100%"></a>
+        </div>
+        {% endfor %}
+    </div>
+</div>

@@ -1,0 +1,284 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="generator" content="Mobirise v4.3.2, mobirise.com">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>KG group</title>
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/slick.css' %}" rel="stylesheet">
+    <link href="{% static 'css/slick-theme.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/jquery.mmenu.css' %}">
+    <link href="http://fonts.googleapis.com/css?family=PT+Sans:400,400i,700,700i&amp;subset=cyrillic,cyrillic-ext,latin-ext" rel="stylesheet"> {% block style %} {% endblock %}
+</head>
+
+<body>
+    {% block content %} {% endblock %}
+
+
+  
+
+
+
+    <a href="#crm" id="popup__toggle" class="html5lightbox"><div class="circlephone " style="transform-origin: center;"></div><div class="circle-fill" style="transform-origin: center;"></div><div class="img-circle" style="transform-origin: center;"><div class="img-circleblock" style="transform-origin: center;"></div></div></a>
+<div id="crm">
+    <form name="Leads from site" class="new_crm" action="http://192.168.0.249/vtiger/modules/Webforms/capture.php" method="post" accept-charset="utf-8" enctype="multipart/form-data"><input type="hidden" name="__vtrftk" value="sid:bdb43391a509b79aebeeea2b729f7cef59d43e61,1561435724">
+        <input type="hidden" name="publicid" value="b93dcad8665938332843f1785c026ce1">
+        <input type="hidden" name="name" value="Leads from site">
+        <input type="hidden" name="VTIGER_RECAPTCHA_PUBLIC_KEY" value="RECAPTCHA PUBLIC KEY FOR THIS DOMAIN">
+        <table>
+            <tbody>
+                <tr>
+
+                    <td><label>Имя*</label></td>
+                    <td>
+                        <input type="text" name="firstname" value="" required=""> </td>
+                </tr>
+                <tr>
+
+                    <td><label>Тел.*</label></td>
+                    <td>
+                        <input type="text" name="phone" value="" required=""> </td>
+                </tr>
+                <tr>
+
+                    <td><label>Кол-во комнат*</label></td>
+                    <td>
+                        <select name="label:Кол-во_комнат" required="">
+                            	<option value="">Выберите значение</option>
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                                </select>
+
+                    </td>
+                </tr>
+                <tr>
+
+                    <td><label>Тип недвижимости*</label></td>
+                    <td>
+                        <select name="label:Тип_недвижимости" required="">
+	<option value="">Выберите значение</option>
+                                                <option value="Жилое помещение">Жилое помещение</option>
+                                                <option value="Коммерческое помещение">Коммерческое помещение</option>
+                                                <option value="Паркинг">Паркинг</option>
+                                                </select>
+
+                    </td>
+                </tr>
+                <tr>
+
+                    <td><label> Интересуется планировкой*</label></td>
+                    <td>
+                        <select name="label:_Интересуется_планировкой[]" required="">
+                                                <option value="Традиционный">Традиционный</option>
+                                                <option value="Студия">Студия</option>
+                                                <option value="Раздельный санузел">Раздельный санузел</option>
+                                                </select>
+                    </td>
+                </tr>
+                <tr>
+
+                    <td><label>Кв.метры*</label></td>
+                    <td>
+                        <input type="number" name="label:Кв.метры" value="" required=""> </td>
+                </tr>
+                <tr>
+
+                    <td>
+                        <select name="leadsource" hidden="">
+	<option value="">Выберите значение</option>
+                                                <option value="Instagram">Instagram</option>
+                                                <option value="Facebook">Facebook</option>
+                                                <option value="Супер KG">Супер KG</option>
+                                                <option value="Web Site" selected="">Веб-сайт</option>
+                                                <option value="Изучавшие рынок">Изучавшие рынок</option>
+                                                <option value="НТС">НТС</option>
+                                                <option value="От наших дольщиков">От наших дольщиков</option>
+                                                <option value="Площадка АН">Площадка АН</option>
+                                                <option value="Логотип на крыше">Логотип на крыше</option>
+                                                <option value="YouTube">YouTube</option>
+                                                </select>
+
+                    </td>
+                </tr>
+                <tr>
+
+                    <td><label>Описание</label></td>
+                    <td>
+                        <textarea name="description"></textarea>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <input type="submit" value="Отправить">
+    </form>
+</div>
+    <!-- WhatsHelp.io widget -->
+    <script type="text/javascript">
+        (function() {
+            var options = {
+                whatsapp: "+996 772 44 22 22", // WhatsApp number
+                company_logo_url: "//static.whatshelp.io/img/flag.png", // URL of company logo (png, jpg, gif)
+                greeting_message: "Здравствуйте! Отправьте нам сообщение через любой из мессенджеров.", // Text of greeting message
+                call_to_action: "Напишите нам", // Call to action
+                position: "left", // Position may be 'right' or 'left'
+            };
+            var proto = document.location.protocol,
+                host = "whatshelp.io",
+                url = proto + "//static." + host;
+            var s = document.createElement('script');
+            s.type = 'text/javascript';
+            s.async = true;
+            s.src = url + '/widget-send-button/js/init.js';
+            s.onload = function() {
+                WhWidgetSendButton.init(host, proto, options);
+            };
+            var x = document.getElementsByTagName('script')[0];
+            x.parentNode.insertBefore(s, x);
+        })();
+    </script>
+    <!-- /WhatsHelp.io widget -->
+
+
+    <script type="text/javascript">
+        window.onload = function() {
+            var N = navigator.appName,
+                ua = navigator.userAgent,
+                tem;
+            var M = ua.match(/(opera|chrome|safari|firefox|msie)\/?\s*(\.?\d+(\.\d+)*)/i);
+            if (M && (tem = ua.match(/version\/([\.\d]+)/i)) != null) M[2] = tem[1];
+            M = M ? [M[1], M[2]] : [N, navigator.appVersion, "-?"];
+            var browserName = M[0];
+            var form = document.forms[0],
+                inputs = form.elements;
+            form.onsubmit = function() {
+                var required = [],
+                    att, val;
+                for (var i = 0; i < inputs.length; i++) {
+                    att = inputs[i].getAttribute("required");
+                    val = inputs[i].value;
+                    type = inputs[i].type;
+                    if (type == "email") {
+                        if (val != "") {
+                            var elemLabel = inputs[i].getAttribute("label");
+                            var emailFilter = /^[_/a-zA-Z0-9]+([!"#$%&()*+,./:;<=>?\^_`{|}~-]?[a-zA-Z0-9/_/-])*@[a-zA-Z0-9]+([\_\-\.]?[a-zA-Z0-9]+)*\.([\-\_]?[a-zA-Z0-9])+(\.?[a-zA-Z0-9]+)?$/;
+                            var illegalChars = /[\(\)\<\>\,\;\:\"\[\]]/;
+                            if (!emailFilter.test(val)) {
+                                alert("For " + elemLabel + " field please enter valid email address");
+                                return false;
+                            } else if (val.match(illegalChars)) {
+                                alert(elemLabel + " field contains illegal characters");
+                                return false;
+                            }
+                        }
+                    }
+                    if (att != null) {
+                        if (val.replace(/^\s+|\s+$/g, "") == "") {
+                            required.push(inputs[i].getAttribute("label"));
+                        }
+                    }
+                }
+                if (required.length > 0) {
+                    alert("The following fields are required: " + required.join());
+                    return false;
+                }
+                var numberTypeInputs = document.querySelectorAll("input[type=number]");
+                for (var i = 0; i < numberTypeInputs.length; i++) {
+                    val = numberTypeInputs[i].value;
+                    var elemLabel = numberTypeInputs[i].getAttribute("label");
+                    if (val != "") {
+                        var intRegex = /^[+-]?\d+$/;
+                        if (!intRegex.test(val)) {
+                            alert("For " + elemLabel + " field please enter valid number");
+                            return false;
+                        }
+                    }
+                }
+            };
+        }
+    </script> 
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="{% static 'js/jquery.mmenu.js' %}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=<ваш API-ключ>" type="text/javascript"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/jquery.maskedinput.min.js' %}"></script>
+    <script src="{% static 'js/icon_customImage.js' %}"></script>
+    <script src="{% static 'js/html5lightbox.js' %}"></script>
+    <script src="{% static 'js/slick.js' %}"></script>
+    <script src="{% static 'js/custom.js' %}"></script>
+    <script>
+        (function($) {
+            var $body;
+            $(document).ready(function() {
+                $body = $('body');
+                $body
+                    .find('.user-phone').each(function() {
+                        $(this).mask("+996(888) 88-88-88", {
+                            autoclear: false
+                        });
+                    });
+                $body.on('keyup', '.user-phone', function() {
+                    var phone = $(this),
+                        phoneVal = phone.val(),
+                        form = $(this).parents('form');
+                });
+            });
+        })(jQuery);
+    </script>
+    <script>
+        function mySearch() {
+            var parent = document.getElementById("result");
+            var ready = document.getElementById('ready');
+            var progress = document.getElementById('progress');
+            var e = document.getElementById("status_select");
+            var status = e.options[e.selectedIndex].text;
+            if (status === 'Готовые объекты') {
+                parent.style.visibility = 'visible';
+                parent.style.height = 'auto';
+                ready.style.visibility = 'visible';
+                ready.style.height = 'auto';
+                progress.style.visibility = 'hidden';
+            } else {
+                parent.style.visibility = 'visible';
+                ready.style.height = 'auto';
+                ready.style.visibility = 'hidden';
+                parent.style.height = 'auto';
+                progress.style.visibility = 'visible';
+            }
+        }
+
+        function mySearchKg() {
+            var parent = document.getElementById("result");
+            var ready = document.getElementById('ready');
+            var progress = document.getElementById('progress');
+            var e = document.getElementById("status_select");
+            var status = e.options[e.selectedIndex].text;
+            if (status === 'Бүткөн имараттар') {
+                parent.style.visibility = 'visible';
+                parent.style.height = 'auto';
+                ready.style.visibility = 'visible';
+                ready.style.height = 'auto';
+                progress.style.visibility = 'hidden';
+            } else {
+                parent.style.visibility = 'visible';
+                ready.style.height = 'auto';
+                ready.style.visibility = 'hidden';
+                parent.style.height = 'auto';
+                progress.style.visibility = 'visible';
+            }
+        }
+    </script>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,19 @@
+<div class="container">
+    <h4>Ход строительства</h4>
+</div>
+<div class="container">
+    <div class="row object_in_progress_collumn">
+        {% for item in step %}
+            <div class="col-xl-4 ">
+                <a href="#">
+                    <img src="{{ item.media.url }}"> <!-- Картинка объектов -->
+                    <div class="desc">
+                        <h6>{{ item.step_name }}</h6> <!-- Заголовок объектов -->
+                        <p>{{ item.title }}</p> <!-- Описание объектов -->
+
+                    </div>
+                </a>
+            </div>
+        {% endfor %}
+    </div>
+</div>

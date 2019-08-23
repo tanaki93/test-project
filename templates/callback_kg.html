@@ -1,0 +1,17 @@
+<div class="container">
+    <h4>Байланышта болуңуз</h4>
+    <p>Толук маалымат алуу үчүн төмөнкү форманы толтуруңуз!</p>
+</div>
+<div class="container">
+    <div class="row">
+        <form action="{% url 'send_email' %}" method="post" class="phone_form">
+            <ul class="callback_spisok">
+                <li><input type="text" name="user_object" placeholder="Квартира сатып алуу"></li>
+                <li><input type="text" name="user_name" placeholder="Атыңызды жазыңыз?"></li>
+                <li><input type="tel" name="user_phone" required placeholder="Сизге кантип байланышабыз?" id="user_phone"
+                        class="user-phone" title="Формат: +996 (999) 99-99-99" />
+            </ul>
+            <input type="submit" name="submit" value="Суроо жонотуу">
+        </form>
+    </div>
+</div>

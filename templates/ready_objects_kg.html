@@ -1,0 +1,14 @@
+<div class="container">
+    <h4>Бүткөн имараттар</h4>
+    <div class="row object_collumn">
+        {% for object in ready_objects_kg %}
+            <div class="col-xl-3 col-lg-3 col-md-6">
+                <a href="{{ object.get_absolute_kg_url }}">
+                    <img src="{{ object.mini_image.url }}">
+                    <h6>{{ object.object_name_kg }}</h6>
+                    <p>{{ object.title_kg }}</p>
+                </a>
+            </div>
+        {% endfor %}
+    </div>
+</div>

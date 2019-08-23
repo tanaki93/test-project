@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block style %}
+    <style>
+        .floor_close {
+            display: none !important;
+        }
+    </style>
+{% endblock %}
+{% block content %}
+<header id="home">
+    {% include 'header_s.html' with phones=phones main_phone=main_phone %}
+</header>
+<section id="news_object">
+    <div class="container">
+        <h4>Новости и акции</h4>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-9 blago">
+                <h5>{{ object.title }}</h5>
+                <p class="date_new">{{ object.created_date }}</p>
+                <img src="{{ object.logo.url }}" width="100%">
+                {{ object.contents|safe }}
+                    <br>
+
+                    {% if video %}
+                    <h2>Видеоматериалы</h2>
+                    {% endif %}
+                    <br>
+                <div class="row">                 
+                    
+                    {% for item in video %}
+                <div class="col-xl-6 offset-xl-3 gallery_new">
+
+                        <video src="{{ item.video.url }}" controls width="100%"></video>
+                                   </div>
+                {% endfor %}
+            </div>
+
+            {% if content %}
+            <h2>Галерея</h2>
+            {% endif %}
+            <br>
+                <div class="row">
+                        {% for item in content %}
+                    <div class="col-xl-3 gallery_new">
+                        <a href="{{ item.image.url }}" class="html5lightbox" data-group="set2">
+                            <img src="{{ item.image.url }}" width="100%" height="130px">
+                        </a>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+                <div class="col-xl-3">
+                    <div class="new_post">
+                        <h5><b>Свежие записи</b></h5>
+                        {% for item in last_4_news %}
+                            <p><a href="{{ item.get_absolute_url }}">{{ item.title }}</a></p>
+                        {% endfor %}
+                        <br>
+                        <p><span class="news_button"><a href="{% url 'news_list' %}">Все новости</a></span></p>
+                        <br>
+                    </div>
+                    <div class="arhiv">
+                        <h5><b>Архивы</b></h5>
+                        <ul>
+                            {% for item in news_archive %}
+                                <li><a href="{{ item.get_absolute_url }}">{{ item.title }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        {% include 'footer.html' %}
+    </footer>
+{% endblock %}

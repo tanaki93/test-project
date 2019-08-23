@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block style %}
+<style>
+    #home {
+        background: url({{ object.big_image.url }}) fixed;
+        background-blend-mode: multiply;
+        background-color: #00000042;
+        background-size: cover;
+        height: 100vh;
+        background-attachment: fixed;
+    }
+    .header_fixed{
+    position: fixed;
+    max-width: 100%!important;
+    padding: 0 55px!important;
+    background: url({{ object.big_image.url }});  
+        background-blend-mode: multiply;
+    background-color: #00000042;
+    background-size:cover; 
+    background-attachment: fixed;
+    z-index: 2;
+    top:0;
+    animation: showElement;
+    animation-duration: 1s;
+}
+</style>
+{% endblock %}
+{% block content %}
+<header id="home">
+    {% include 'header_kg_s.html' with phones=phones main_phone=main_phone title=object.object_name_kg %}
+</header>
+<section id="desc_object">
+    <div class="container">
+        <h4>{{ object.object_name_kg }}</h4>
+    </div>
+    <div class="container ">
+        <p>{{ object.info_kg }}</p>
+        <div class="row">
+            <div class="col-xl-3 object_desc">
+                <h4>Объект жөнүндө</h4>
+                <p>{{ object.title_kg }}</p>
+                <ul>
+                    {% for tag in tags %}
+                    <li>{{ tag.tag_name_kg }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="col-xl-8">
+                {% if object.map %}
+                <iframe src="{{ object.map }}" width="100%" height="450" frameborder="0"></iframe>
+                {% else %}
+                <iframe src="https://yandex.kg/map-widget/v1/-/CCRHuMNz" width="100%" height="450" frameborder="0"></iframe>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</section>
+<section id="video">
+    {% include 'object_gallery_kg.html' %}
+</section>
+<!-- <section id="objects_in_progress">
+        {% include 'build_progress.html' %}
+    </section> -->
+<section id="flat_block">
+    {% include 'flat_block.html' %}
+</section>
+<section id="callback">
+    {% include 'callback_kg.html' %}
+</section>
+<footer>
+    {% include 'footer_kg.html' %}
+</footer>
+{% endblock %}
