@@ -3,4 +3,4 @@ django-ckeditor==5.7.0
 django-js-asset==1.2.2
 Pillow==6.0.0
 pytz==2018.9
-sqlparse==0.3.0
+sqlparse==0.4.4
